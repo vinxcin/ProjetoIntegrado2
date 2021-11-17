@@ -4,7 +4,7 @@
 
 <div class="bg-gradient-primary">
 
-    <div class="container" style="padding-bottom: 61px;">
+    <div class="container-fluid" style="height: 94vh;">
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
@@ -44,7 +44,7 @@
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control form-control-user form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus id="exampleInputEmail" aria-describedby="emailHelp" placeholder="coloque seu e-mail">
+                                                    <input type="text" class="form-control form-control-user form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus id="exampleInputEmail" aria-describedby="emailHelp" placeholder="username">
                                                 </div>
                                             </div>
 
@@ -62,7 +62,7 @@
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="senha">
+                                                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="senha" name="password">
                                                 </div>
 
                                                 @error('password')

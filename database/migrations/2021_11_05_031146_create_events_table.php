@@ -14,7 +14,7 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->id();
+            $table->id()->unique();
             $table->string('nome');
             $table->string('nome_palestrante');
             $table->string('descricao');
@@ -22,16 +22,13 @@ class CreateEventsTable extends Migration
             $table->string('bairro');
             $table->string('local');
             $table->string('imagem');
-            $table->vagas_disponiveis();
-            $table->duracao();
-            $table->certificado_id();
-            $table->bool('status');
-            $table->bool('metodo');
+            $table->integer('vagas_disponiveis');
+            $table->time('duracao');
+            $table->boolean('status');
+            $table->boolean('metodo');
             $table->date('data');
             $table->time('hora');
             $table->timestamps();
-
-            $table->foreign('certificado_id')->references('id')->on('certificates');
         });
     }
 
