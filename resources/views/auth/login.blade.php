@@ -17,7 +17,7 @@
                         <div class="row">
                             <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div> -->
                             <div class="col-lg-6 d-none d-lg-block">
-                                 <img src="{{ asset('img/logo.png') }}" width="100%" height="100%" />
+                                <img src="{{ asset('img/logo.png') }}" width="100%" height="100%" />
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
@@ -44,7 +44,7 @@
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control form-control-user form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus id="exampleInputEmail" aria-describedby="emailHelp" placeholder="username">
+                                                    <input style="border-radius:18px;" type="text" class="form-control form-control-user form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus id="exampleInputEmail" aria-describedby="emailHelp" placeholder="username">
                                                 </div>
                                             </div>
 
@@ -62,7 +62,7 @@
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="senha" name="password">
+                                                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" style="border-radius:18px;" placeholder="senha" name="password">
                                                 </div>
 
                                                 @error('password')
@@ -73,8 +73,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group row">
-                                            <div class="col-md-6 offset-md-4">
+                                        <!-- <div class="form-group row">
+                                            <div class="col-md-4 offset-md-3">
                                                 <div class="form-check">
                                                     <input type="checkbox" class="custom-control-input" id="customCheck" {{ old('remember') ? 'checked' : '' }}>
                                                     <label class="custom-control-label" for="customCheck">
@@ -83,14 +83,18 @@
 
                                                 </div>
                                             </div>
+                                        </div> -->
+
+                                        <div class="form-group row mb-0">
+                                            <div class="col-md-9 offset-md-2">
+                                                <button type="submit" class="btn btn-primary" style="width: 100%; border-radius:15px;">
+                                                    {{ __('Entrar') }}
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div class="form-group row mb-0">
-                                            <div class="col-md-10 offset-md-2">
-                                                <button type="submit" class="btn btn-primary">
-                                                    {{ __('Entrar') }}
-                                                </button>
-
+                                            <div class="col-md-8 offset-md-4">
                                                 @if (Route::has('password.request'))
                                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                                     {{ __('Esqueceu sua senha?') }}
@@ -110,4 +114,5 @@
         </div>
 
     </div>
+</div>
 @endsection
