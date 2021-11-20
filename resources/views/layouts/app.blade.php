@@ -68,11 +68,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-<<<<<<< HEAD
                                             document.getElementById('logout-form').submit();">
-=======
-                                                     document.getElementById('logout-form').submit();">
->>>>>>> a2003e709812b9c9a4163d3a411ad51f034f17b5
                                         {{ __('Sair') }}
                                     </a>
 
