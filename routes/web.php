@@ -11,6 +11,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+<<<<<<< HEAD
 
 
 //USUÁRIO COMUM/PARTICIPANTE
@@ -29,3 +30,6 @@ Route::get('participant/certificados', [App\Http\Controllers\Participant\Dashboa
 Route::get('participant/dados', [App\Http\Controllers\Participant\Dashboard\DadoController::class, 'index'])
     ->name('participant.dashboard.dados')
     ->middleware('auth');    
+=======
+Route::get('participant/dashboard', [App\Http\Controllers\Participant\Dashboard\DashboardController::class, 'index'])->name('participant.dashboard.index');
+>>>>>>> a2003e709812b9c9a4163d3a411ad51f034f17b5

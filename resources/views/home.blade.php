@@ -16,7 +16,10 @@
 
                     {{ __('Você está logado!') }}
                 </div>
+<<<<<<< HEAD
                 <br>
+=======
+>>>>>>> a2003e709812b9c9a4163d3a411ad51f034f17b5
             </div>
         </div>
     </div>
