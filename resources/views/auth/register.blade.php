@@ -92,59 +92,61 @@
                                 </label>
                             </div> -->
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" style='display'>
-                            <label class="form-check-label" for="flexRadioDefault1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
                                     Default radio
-                            </label>
-                        <div class="form-funcionario">
-
-                            <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Cargo') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('cargo') is-invalid @enderror" name="cargo" value="{{ old('cargo') }}" required autocomplete="cargo" autofocus>
-
-                                    @error('cargo')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
+                                </label>
                             </div>
 
-                            <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Sede') }}</label>
+                            <div class="form-funcionario">
 
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('sede') is-invalid @enderror" name="sede" value="{{ old('cargo') }}" required autocomplete="sede" autofocus>
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Cargo') }}</label>
 
-                                    @error('sede')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                    <div class="col-md-6">
+                                        <select class="form-select" name="cargo" aria-label="Default select example">
+                                            <option selected></option>
+                                            <option value="Agente administrativo">Agente administrativo</option>
+                                            <option value="Professor">Professor</option>
+                                            <option value="Assistente">Assistente adminstrativo</option>
+                                        </select>
+
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Matricula') }}</label>
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Sede') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('matricula') is-invalid @enderror" name="matricula" value="{{ old('matricula') }}" required autocomplete="matricula" autofocus>
+                                    <div class="col-md-6">
+                                        <input id="name" type="text" class="form-control @error('sede') is-invalid @enderror" name="sede" value="{{ old('cargo') }}" autofocus>
 
-                                    @error('matricula')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                        @error('sede')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
                                 </div>
-                            </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Matricula') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="name" type="text" class="form-control @error('matricula') is-invalid @enderror" name="matricula" value="{{ old('matricula') }}" autofocus>
+
+                                        @error('matricula')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
 
 
 
 
-                            <!-- <select class="form-control select2" id="options" onchange="optionCheck()" name="TipoAcesso" style="width: 100%;">
+                                <!-- <select class="form-control select2" id="options" onchange="optionCheck()" name="TipoAcesso" style="width: 100%;">
                             <option selected="selected">Selecione o tipo de acesso</option>
                             <option value="3">Administrador da Escola</option>
                             <option value="7">Aluno</option>
@@ -157,51 +159,49 @@
 
 
 
-                            <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required autocomplete="cpf" autofocus>
+                                    <div class="col-md-6">
+                                        <input id="name" type="text" class="form-control @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required autocomplete="cpf" autofocus>
 
-                                    @error('cpf')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                        @error('cpf')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('TIPO') }}</label>
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('TIPO') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('tipo') is-invalid @enderror" name="tipo" value="{{ old('tipo') }}" required autocomplete="tipo" autofocus>
+                                    <div class="col-md-6">
+                                        <input id="name" type="text" class="form-control @error('tipo') is-invalid @enderror" name="tipo" value="{{ old('tipo') }}"  autofocus>
 
-                                    @error('tipo')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                        @error('tipo')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Cadastrar') }}
-                                    </button>
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            {{ __('Cadastrar') }}
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
                         </form>
-                        </div>
-                     
-                        
-                                
                     </div>
-                       
-                        
-                    </div>
+
+
+
                 </div>
+
+
             </div>
         </div>
     </div>
