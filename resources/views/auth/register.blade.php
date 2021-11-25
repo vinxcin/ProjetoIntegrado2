@@ -92,14 +92,43 @@
                                 </label>
                             </div> -->
 
+                            <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required autocomplete="cpf" autofocus>
+
+                                    @error('cpf')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Default radio
+                                <input class="form-check-input" type="checkbox" value="" id="checkbox" name="check">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Trabalha na prefeitura?
                                 </label>
                             </div>
 
-                            <div class="form-funcionario">
+
+                            <div id="checkVal" class="row my-2 mx-1 py-2 border rounded" style="display: none;">
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Matricula') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="name" type="text" class="form-control @error('matricula') is-invalid @enderror" name="matricula" value="{{ old('matricula') }}" autofocus>
+
+                                        @error('matricula')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
 
                                 <div class="form-group row">
                                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Cargo') }}</label>
@@ -119,53 +148,14 @@
                                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Sede') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control @error('sede') is-invalid @enderror" name="sede" value="{{ old('cargo') }}" autofocus>
+                                        <select class="form-select" name="sede" aria-label="Default select example">
+                                            <option selected></option>
+                                            <option value="SEDUC">SEDUC</option>
+                                            <option value="Escola">Escola</option>
+                                            <option value="SDS">Secretaria da Saúde</option>
+                                        </select>
 
                                         @error('sede')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Matricula') }}</label>
-
-                                    <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control @error('matricula') is-invalid @enderror" name="matricula" value="{{ old('matricula') }}" autofocus>
-
-                                        @error('matricula')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-
-
-
-                                <!-- <select class="form-control select2" id="options" onchange="optionCheck()" name="TipoAcesso" style="width: 100%;">
-                            <option selected="selected">Selecione o tipo de acesso</option>
-                            <option value="3">Administrador da Escola</option>
-                            <option value="7">Aluno</option>
-                            <option value="4">Coordenador</option>
-                            <option value="5">Professor</option>
-                            <option value="8">Responsável</option>
-                            <option value="6">Secretaria</option>
-                            <option value="12">Gerente da Plataforma</option>
-                        </select> -->
-
-
-
-                                <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
-
-                                    <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required autocomplete="cpf" autofocus>
-
-                                        @error('cpf')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -177,7 +167,13 @@
                                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('TIPO') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control @error('tipo') is-invalid @enderror" name="tipo" value="{{ old('tipo') }}"  autofocus>
+
+                                        <select class="form-select" name="tipo" aria-label="Default select example">
+                                            <option selected></option>
+                                            <option value="1">Não sei</option>
+                                            <option value="2">Sei lá</option>
+                                            <option value="3">Ainda não sei</option>
+                                        </select>
 
                                         @error('tipo')
                                         <span class="invalid-feedback" role="alert">
@@ -186,14 +182,14 @@
                                         @enderror
                                     </div>
                                 </div>
-
-                                <div class="form-group row mb-0">
+                            </div>
+                            <div class="form-group row mb-0">
                                     <div class="col-md-6 offset-md-4">
                                         <button type="submit" class="btn btn-primary">
                                             {{ __('Cadastrar') }}
                                         </button>
                                     </div>
-                                </div>
+                            </div>
                         </form>
                     </div>
 

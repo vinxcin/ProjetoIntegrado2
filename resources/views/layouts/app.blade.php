@@ -14,6 +14,10 @@
 
     <script src="{{ asset('js/sb-admin-2.min.js') }}" defer></script>
 
+    <script src="{{ asset('js/registro.js') }}" defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
