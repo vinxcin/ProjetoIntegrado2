@@ -1,24 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.dash')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('Você está logado!') }}
-                </div>
-                <br>
-            </div>
-        </div>
-    </div>
+    
+<div id="search-container" class="col-md-4 busca">
+    <h3>Eventos Disponíveis</h3>
+    <form action="/events/show/" method="GET">
+        <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
+    </form>
 </div>
+    
 @endsection
