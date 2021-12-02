@@ -44,11 +44,7 @@ class RegisterController extends Controller
             'username'  => ['required', 'string', 'min:8', 'unique:users,username'],
             'check'     => ['sometimes'],
             'matricula' => ['required_with:check,on', 'max:5'],
-<<<<<<< HEAD
-            'cpf'       => ['required', 'integer' ,'unique:users'],
-=======
-            'cpf'       => ['required', 'integer', 'unique:users'],
->>>>>>> b96675e11aae52f7ba3e6b25eae7dfc9f89494e0
+
         ]);
     }
 

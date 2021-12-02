@@ -29,3 +29,22 @@ Route::get('participant/certificados', [App\Http\Controllers\Participant\Dashboa
 Route::get('participant/dados', [App\Http\Controllers\Participant\Dashboard\DadoController::class, 'index'])
     ->name('participant.dashboard.dados')
     ->middleware('auth');    
+
+
+ //USUÁRIO ADMINISTRADOR   
+
+Route::get('administrador/dashboard', [App\Http\Controllers\Administrador\DashboardController::class, 'index'])
+    ->name('administrador.index')
+    ->middleware('auth');
+
+Route::get('administrador/agenda', [App\Http\Controllers\Administrador\AgendaController::class, 'index'])
+    ->name('administrador.agenda')
+    ->middleware('auth');
+
+Route::get('administrador/certificados', [App\Http\Controllers\Administrador\CertificadoController::class, 'index'])
+    ->name('administrador.certificados')
+    ->middleware('auth');
+
+Route::get('administrador/dados', [App\Http\Controllers\Administrador\DadoController::class, 'index'])
+    ->name('administrador.dados')
+    ->middleware('auth');    
