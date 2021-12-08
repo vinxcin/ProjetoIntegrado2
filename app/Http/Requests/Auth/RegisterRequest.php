@@ -18,11 +18,11 @@ class RegisterRequest extends FormRequest
             'user.email'          => ['required', 'email'],
             'user.username'       => ['required', 'size:12'],
             'user.cpf'            => 'required',
-            'user.password'       => ['required', 'min:8'],
+            'user.password'       => ['required', 'min:8', 'confirmed'],
             'phones.0.number'     => ['required', 'size:14'],
             'phones.1.number'     => ['required', 'size:15'],
-            'address.cep'         => ['required', 'size:2'],
-            'address.uf'          => 'required',
+            'address.cep'         => 'required',
+            'address.uf'          => ['required', 'size:2'],
             'address.cidade'      => 'required',
             'address.rua'         => 'required',
             'address.numero'      => ['required', 'numeric', 'integer'],
@@ -30,6 +30,27 @@ class RegisterRequest extends FormRequest
             'address.complemento' => ['nullable', 'max:25'],
 
             'user.matricula' => ['nullable', 'numeric', 'max:6'],
+        ];
+    }
+
+    public function attributes() {
+        return [
+            'user.name'           => 'nome',
+            'user.email'          => 'e-mail',
+            'user.username'       => 'nome de usuário',
+            'user.cpf'            => 'CPF',
+            'user.password'       => 'senha',
+            'phones.0.number'     => 'telefone',
+            'phones.1.number'     => 'celular',
+            'address.cep'         => 'CEP',
+            'address.uf'          => 'UF',
+            'address.cidade'      => 'cidade',
+            'address.rua'         => 'logradouro',
+            'address.numero'      => 'número',
+            'address.bairro'      => 'bairro',
+            'address.complemento' => 'complemento',
+
+            'user.matricula'      => 'matrícula',
         ];
     }
 }

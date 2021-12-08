@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-gradient-primary" style="height: 160vh;">
+<div class="bg-gradient-primary" style="height: 180vh;">
 
     <h1 class="text-center pt-4">Criar conta</h1>
 
@@ -40,18 +40,18 @@
                                 placeholder="CPF"
                                 name="user[cpf]"
                             >
-                            <div class="invalid-feedback">{{ $errors->first('user.name') }}</div>
+                            <div class="invalid-feedback">{{ $errors->first('user.cpf') }}</div>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
                             <input
                                 type="text"
-                                class="form-control {{ $errors->has('user.email') ? 'is-invalid' : '' }}"
+                                class="form-control {{ $errors->has('user.username') ? 'is-invalid' : '' }}"
                                 placeholder="Nome de usuário"
                                 name="user[username]"
                             >
-                            <div class="invalid-feedback">{{ $errors->first('user.email') }}</div>
+                            <div class="invalid-feedback">{{ $errors->first('user.username') }}</div>
                         </div>
                     </div>
                     <div class="col-md-6">
