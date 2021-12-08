@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('cargo')->nullable();
             $table->string('sede')->nullable();
             $table->integer('matricula')->nullable();
-            $table->integer('tipo')->nullable();
+            $table->string('tipo')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

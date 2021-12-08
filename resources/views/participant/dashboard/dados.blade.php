@@ -4,6 +4,7 @@
     <br>
 @endsection
 @section('content')
+        
 
                 <!------------------------------------------------ CARD ALTERAR MEUS DADOS --------------------------------------------------------->
                         <div class="card text-black bg-primary mb-4 border-primary" style="max-width: 40rem;text-align:center;margin:auto">
