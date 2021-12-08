@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use App\Http\Requests\Auth\RegisterRequest;
 
 
 class RegisterController extends Controller
@@ -37,25 +38,24 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name'      => ['required', 'string', 'min:15', 'max:255'],
-            'email'     => ['required', 'string', 'email', 'max:40', 'unique:users'],
-            'password'  => ['required', 'string', 'min:8', 'confirmed'],
-            'username'  => ['required', 'string', 'min:8', 'unique:users,username'],
-            'check'     => ['sometimes'],
-            'matricula' => ['required_with:check,on', 'max:5'],
-
-        ]);
-    }
+    // protected function validator(array $data)
+    // {
+    //     return Validator::make($data, [
+    //         'name'      => ['required', 'string', 'min:15', 'max:255'],
+    //         'email'     => ['required', 'string', 'email', 'max:40', 'unique:users'],
+    //         'password'  => ['required', 'string', 'min:8', 'confirmed'],
+    //         'username'  => ['required', 'string', 'min:8', 'unique:users,username'],
+    //         'check'     => ['sometimes'],
+    //         'matricula' => ['required_with:check,on', 'max:5'],
+    //     ]);
+    // }
 
 
     public function create() {
         return view('auth.register');
     }
 
-    public function store(Request $request) {
+    public function store(RegisterRequest $request) {
 
         $requestData = $request->all();
 
@@ -65,6 +65,9 @@ class RegisterController extends Controller
 
         $user->address()->create($requestData['address']); // cadastro do endereço do usuário a partir do relacionamento
 
+        foreach($requestData['phones'] as $phone){
+            $user->phones()->create($phone);
+        }
     }
     // /**
     //  * Create a new user instance after a valid registration.

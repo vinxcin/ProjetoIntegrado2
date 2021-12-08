@@ -10,6 +10,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 // ROTAS DE TESTE ATUALZIADAS PELO GUILHERME 08/12 15:42
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
