@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Models\User;
+use App\Models\{User, Address};
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+
 
 class RegisterController extends Controller
 {    use RegistersUsers;
@@ -48,24 +50,40 @@ class RegisterController extends Controller
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name'      => $data['name'],
-            'email'     => $data['email'],
-            'password'  => Hash::make($data['password']),
-            'username'  => $data['username'],
-            'cpf'       => $data['cpf'],
-            'cargo'     => $data['cargo'],
-            'sede'      => $data['sede'],
-            'matricula' => $data['matricula'],
-            'tipo'      => $data['tipo']
-        ]);
+
+    public function create() {
+        return view('auth.register');
     }
+
+    public function store(Request $request) {
+
+        $requestData = $request->all();
+
+        $resquestData['user']['tipo'] = 'participant';
+
+        $user = User::create($requestData['user']);
+
+        $user->address()->create($requestData['address']); // cadastro do endereço do usuário a partir do relacionamento
+
+    }
+    // /**
+    //  * Create a new user instance after a valid registration.
+    //  *
+    //  * @param  array  $data
+    //  * @return \App\Models\User
+    //  */
+    // protected function create(array $data)
+    // {
+    //     return User::create([
+    //         'name'      => $data['name'],
+    //         'email'     => $data['email'],
+    //         'password'  => Hash::make($data['password']),
+    //         'username'  => $data['username'],
+    //         'cpf'       => $data['cpf'],
+    //         'cargo'     => $data['cargo'],
+    //         'sede'      => $data['sede'],
+    //         'matricula' => $data['matricula'],
+    //         'tipo'      => $data['tipo']
+    //     ]);
+    // }
 }

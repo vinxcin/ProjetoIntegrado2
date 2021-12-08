@@ -6,9 +6,11 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Model
+
 {
     use HasFactory, Notifiable;
 
@@ -17,6 +19,9 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+
+    protected $table = 'users';
+
     protected $fillable = [
         'name',
         'email',
@@ -28,6 +33,16 @@ class User extends Authenticatable
         'cpf',
         'tipo'
     ];
+
+    //mutators
+    public function setPasswordAttribute($value){
+        $this->attributes['password'] = bcrypt($value);
+    }
+
+    //relacionamentos
+    public function address() {
+        return $this->hasOne(Address::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

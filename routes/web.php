@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -9,8 +10,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// ROTAS DE TESTE ATUALZIADAS PELO GUILHERME 08/12 15:42
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('register', [RegisterController::class, 'create'])->name('auth.register.create');
+Route::post('register', [RegisterController::class, 'store'])->name('auth.register.store');
+
+//-----------------------------------------------------------------------------------------
 
 
 //USUÁRIO COMUM/PARTICIPANTE
@@ -28,10 +34,10 @@ Route::get('participant/certificados', [App\Http\Controllers\Participant\Dashboa
 
 Route::get('participant/dados', [App\Http\Controllers\Participant\Dashboard\DadoController::class, 'index'])
     ->name('participant.dashboard.dados')
-    ->middleware('auth');    
+    ->middleware('auth');
 
 
- //USUÁRIO ADMINISTRADOR   
+ //USUÁRIO ADMINISTRADOR
 
 Route::get('administrador/dashboard', [App\Http\Controllers\Administrador\DashboardController::class, 'index'])
     ->name('administrador.index')
@@ -47,4 +53,4 @@ Route::get('administrador/certificados', [App\Http\Controllers\Administrador\Cer
 
 Route::get('administrador/dados', [App\Http\Controllers\Administrador\DadoController::class, 'index'])
     ->name('administrador.dados')
-    ->middleware('auth');    
+    ->middleware('auth');
