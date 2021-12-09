@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <input
                                 type="text"
-                                class="form-control {{ $errors->has('user.email') ? 'is-invalid' : '' }}"
+                                class="form-control cpf {{ $errors->has('user.email') ? 'is-invalid' : '' }}"
                                 placeholder="CPF"
                                 name="user[cpf]"
                             >
@@ -81,7 +81,7 @@
                                 <input
                                     type="text"
                                     name="phones[0][number]"
-                                    class="form-control {{ $errors->has('phones.0.number') ? 'is-invalid' : '' }}"
+                                    class="form-control tel {{ $errors->has('phones.0.number') ? 'is-invalid' : '' }}"
                                     placeholder="Telefone"
                                 >
                                 <div class="invalid-feedback">{{ $errors->first('phones.0.number') }}</div>
@@ -92,7 +92,7 @@
                                 <input
                                     type="text"
                                     name="phones[1][number]"
-                                    class="form-control {{ $errors->has('phones.1.number') ? 'is-invalid' : '' }}"
+                                    class="form-control cel {{ $errors->has('phones.1.number') ? 'is-invalid' : '' }}"
                                     placeholder="Celular"
                                 >
                                 <div class="invalid-feedback">{{ $errors->first('phones.1.number') }}</div>
@@ -107,8 +107,9 @@
                             <div class="form-group">
                                 <input
                                     type="text"
+                                    id="cep"
                                     name="address[cep]"
-                                    class="form-control {{ $errors->has('address.cep') ? 'is-invalid' : '' }}"
+                                    class="form-control cep {{ $errors->has('address.cep') ? 'is-invalid' : '' }}"
                                     placeholder="CEP"
                                 >
                                 <div class="invalid-feedback">{{ $errors->first('address.cep') }}</div>
@@ -119,7 +120,7 @@
                                 <input
                                     type="text"
                                     name="address[uf]"
-                                    class="form-control {{ $errors->has('address.uf') ? 'is-invalid' : '' }}"
+                                    class="form-control uf {{ $errors->has('address.uf') ? 'is-invalid' : '' }}"
                                     placeholder="UF"
                                 >
                                 <div class="invalid-feedback">{{ $errors->first('address.uf') }}</div>
@@ -253,6 +254,19 @@
         </div>
     </div>
 </div>
+
+<script>
+    //máscaras
+    $('.cpf').mask('000.000.000-00');
+    $('.cep').mask('00000-000');
+    $('.uf').mask('SS');
+    $('.tel').mask('(00) 0000-0000');
+    $('.cel').mask('(00) 00000-0000');
+
+    $(document).on('blur', '#cep', function(){
+        
+    });
+</script>
 
 
 @endsection

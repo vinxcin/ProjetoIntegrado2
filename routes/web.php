@@ -12,6 +12,15 @@ Auth::routes();
 
 
 // ROTAS DE TESTE ATUALZIADAS PELO GUILHERME 08/12 15:42
+
+
+// Route::group(['as' => 'auth.'], function() {
+//     Route::group(['middleware' => 'guest'], function(){
+//         Route::get('register', [RegisterController::class, 'create'])->name('register.create');
+//         Route::post('register', [RegisterController::class, 'store'])->name('register.store');
+//     });
+// });
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('register', [RegisterController::class, 'create'])->name('auth.register.create');

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Http\Requests\Auth\RegisterRequest;
+use Illuminate\Support\Facades\DB;
 
 
 class RegisterController extends Controller
@@ -57,7 +58,7 @@ class RegisterController extends Controller
 
     public function store(RegisterRequest $request) {
 
-        $requestData = $request->all();
+        $requestData = $request->validated();
 
         $resquestData['user']['tipo'] = 'participant';
 
@@ -66,9 +67,12 @@ class RegisterController extends Controller
         $user->address()->create($requestData['address']); // cadastro do endereço do usuário a partir do relacionamento
 
         foreach($requestData['phones'] as $phone){
-            $user->phones()->create($phone);
+             $user->phones()->create($phone);
         }
-    }
+
+        return redirect()->route('home');
+     }
+
     // /**
     //  * Create a new user instance after a valid registration.
     //  *
