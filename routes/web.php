@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
 use App\Http\Controllers\Auth\{
     LoginController,
     RegisterController
@@ -15,10 +14,10 @@ Route::get('/', function () {
 Auth::routes();
 
 // ROTAS DE TESTE ATUALZIADAS PELO GUILHERME 08/12 15:42
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
-//Route::get('/register', [RegisterController::class, 'create'])->name('auth.register.create');
-//Route::post('/register', [RegisterController::class, 'store'])->name('auth.register.store');
+Route::get('register', [RegisterController::class, 'create'])->name('auth.register.create');
+Route::post('register', [RegisterController::class, 'store'])->name('auth.register.store');
 
 //-----------------------------------------------------------------------------------------
 

@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-gradient-primary" style="height: 180vh;">
+<div class="bg-gradient-primary">
 
-    <h1 class="text-center pt-4">Criar conta</h1>
+    <h1 class="text-center pt-3">Criar conta</h1>
 
     <div class="card shadow my-3 w-75 mx-auto">
         <div class="card-body">

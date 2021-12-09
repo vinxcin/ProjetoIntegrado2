@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="bg-gradient-primary">
 
     <div class="container-fluid" style="height: 94vh;">
