@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Requests\Auth;
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\Cpf;
+
 class RegisterRequest extends FormRequest
 {
     public function authorize()
@@ -11,9 +13,9 @@ class RegisterRequest extends FormRequest
     {
         return [
             'user.name'           => 'required',
-            'user.email'          => ['required', 'email'],
-            'user.username'       => ['required', 'max:15', 'min:10'],
-            'user.cpf'            => 'required',
+            'user.email'          => ['required', 'email', 'unique:users,email'],
+            'user.username'       => ['required', 'max:15', 'min:10', 'unique:users,username'],
+            'user.cpf'            => ['required', new Cpf, 'unique:users,cpf'],
             'user.password'       => ['required', 'min:8', 'confirmed'],
             'phones.0.number'     => ['required', 'size:14'],
             'phones.1.number'     => ['required', 'size:15'],

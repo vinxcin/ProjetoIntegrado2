@@ -126,6 +126,7 @@
                             <div class="form-group">
                                 <input
                                     type="text"
+                                    id="uf"
                                     name="address[uf]"
                                     class="form-control uf {{ $errors->has('address.uf') ? 'is-invalid' : '' }}"
                                     placeholder="UF"
@@ -138,6 +139,7 @@
                             <div class="form-group">
                                 <input
                                     type="text"
+                                    id="cidade"
                                     name="address[cidade]"
                                     class="form-control {{ $errors->has('address.cidade') ? 'is-invalid' : '' }}"
                                     placeholder="Cidade"
@@ -150,6 +152,7 @@
                             <div class="form-group">
                                 <input
                                     type="text"
+                                    id="rua"
                                     name="address[rua]"
                                     class="form-control {{ $errors->has('address.rua') ? 'is-invalid' : '' }}"
                                     placeholder="Logradouro"
@@ -174,6 +177,7 @@
                             <div class="form-group">
                                 <input
                                     type="text"
+                                    id="bairro"
                                     name="address[bairro]"
                                     class="form-control {{ $errors->has('address.bairro') ? 'is-invalid' : '' }}"
                                     placeholder="Bairro"

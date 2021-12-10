@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('cpf')->unique();
+            $table->string('cpf')->unique();
             $table->string('cargo')->nullable();
             $table->string('sede')->nullable();
             $table->integer('matricula')->nullable();

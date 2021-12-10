@@ -23,8 +23,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- JQUERIES -->
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('vendor/jquery-mask/jquery.mask.min.js') }}"></script>
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}" defer></script>
+
+    <script src="{{ asset('js/jquery-mask/jquery.mask.min.js') }}" defer></script>
+    <script src="{{ asset('js/masks.js') }}" defer></script>
+
 
 
     <!-- Styles -->
