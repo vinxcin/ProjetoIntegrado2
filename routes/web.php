@@ -11,8 +11,7 @@ Route::get('/', function () {
 Auth::routes();
 
 
-// ROTAS DE TESTE ATUALZIADAS PELO GUILHERME 08/12 15:42
-
+// ROTAS DE TESTE ATUALIZADAS PELO GUILHERME 08/12 15:42
 
 Route::group(['as' => 'auth.'], function() {
     Route::group(['middleware' => 'guest'], function(){
@@ -63,3 +62,14 @@ Route::get('administrador/certificados', [App\Http\Controllers\Administrador\Cer
 Route::get('administrador/dados', [App\Http\Controllers\Administrador\DadoController::class, 'index'])
     ->name('administrador.dados')
     ->middleware('auth');
+
+    //Sessão de eventos
+
+    Route::get('administrador/events', [App\Http\Controllers\Administrador\Event\EventsController::class, 'index'])
+    ->name('administrador.events.index')
+    ->middleware('auth');
+
+    Route::get('administrador/events/create', [App\Http\Controllers\Administrador\Event\EventsController::class, 'create'])
+    ->name('administrador.events.create')
+    ->middleware('auth');
+
