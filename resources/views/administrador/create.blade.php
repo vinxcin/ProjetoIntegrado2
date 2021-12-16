@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <form action="" method="POST" autocomplete="off">
+    <form action="administrador.events.store" method="POST" autocomplete="off">
         @csrf
         <div class="row">
             <div class="col-lg-6">
@@ -9,25 +9,25 @@
                     <label for="name">Nome</label>
                     <input
                         type="text"
-                        class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
-                        id="name"
-                        name="name"
-                        value="{{ old('name') }}"
+                        class="form-control {{ $errors->has('nome') ? 'is-invalid' : '' }}"
+                        id="nome"
+                        name="nome"
+                        value="{{ old('nome') }}"
                     >
-                    <div class="invalid-feedback">{{ $errors->first('name') }}</div>
+                    <div class="invalid-feedback">{{ $errors->first('nome') }}</div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="speaker_name">Nome do palestrante</label>
+                    <label for="nome_palestrante">Nome do palestrante</label>
                     <input
                         type="text"
-                        class="form-control {{ $errors->has('speaker_name') ? 'is-invalid' : '' }}"
-                        id="speaker_name"
-                        name="speaker_name"
-                        value="{{ old('speaker_name') }}"
+                        class="form-control {{ $errors->has('nome_palestrante') ? 'is-invalid' : '' }}"
+                        id="nome_palestrante"
+                        name="nome_palestrante"
+                        value="{{ old('nome_palestrante') }}"
                     >
-                    <div class="invalid-feedback">{{ $errors->first('speaker_name') }}</div>
+                    <div class="invalid-feedback">{{ $errors->first('nome_palestrante') }}</div>
                 </div>
             </div>
             <div class="col-lg-3">
@@ -39,6 +39,7 @@
                         id="start_date"
                         name="start_date"
                         value="{{ old('start_date') }}"
+                        data-mask="00/00/0000 00:00"
                     >
                     <div class="invalid-feedback">{{ $errors->first('start_date') }}</div>
                 </div>
@@ -52,6 +53,7 @@
                         id="end_date"
                         name="end_date"
                         value="{{ old('end_date') }}"
+                        data-mask="00/00/0000 00:00"
                     >
                     <div class="invalid-feedback">{{ $errors->first('end_date') }}</div>
                 </div>

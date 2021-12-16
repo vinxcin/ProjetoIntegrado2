@@ -66,5 +66,7 @@ Route::group(['as' => 'auth.'], function() {
 
             Route::get('administrador/events/create', [App\Http\Controllers\Administrador\EventController::class, 'create'])
             ->name('administrador.create');
+
+            Route::post('events', [App\Http\Controllers\Administrador\EventController::class, 'store'])->name('events.store');
     });
 });

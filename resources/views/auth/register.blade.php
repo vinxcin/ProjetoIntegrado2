@@ -14,10 +14,10 @@
                         <div class="form-group">
                             <input
                                 type="text"
-                                class="form-control {{ $errors->has('user.name') ? 'is-invalid' : '' }}"
+                                class="form-control {{ $errors->has('user.nome') ? 'is-invalid' : '' }}"
                                 placeholder="Nome"
-                                name="user[name]"
-                                value="{{ old('user.name') }}"
+                                name="user[nome]"
+                                value="{{ old('user.nome') }}"
                             >
                             <div class="invalid-feedback">{{ $errors->first('user.name') }}</div>
                         </div>
