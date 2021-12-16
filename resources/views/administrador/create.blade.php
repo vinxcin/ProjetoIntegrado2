@@ -9,12 +9,12 @@
                     <label for="name">Nome</label>
                     <input
                         type="text"
-                        class="form-control {{ $errors->has('nome') ? 'is-invalid' : '' }}"
-                        id="nome"
-                        name="nome"
+                        class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
+                        id="name"
+                        name="name"
                         value="{{ old('nome') }}"
                     >
-                    <div class="invalid-feedback">{{ $errors->first('nome') }}</div>
+                    <div class="invalid-feedback">{{ $errors->first('name') }}</div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -27,7 +27,7 @@
                         name="nome_palestrante"
                         value="{{ old('nome_palestrante') }}"
                     >
-                    <div class="invalid-feedback">{{ $errors->first('nome_palestrante') }}</div>
+                    <div class="invalid-feedback">{{ $errors->first('speaker_name') }}</div>
                 </div>
             </div>
             <div class="col-lg-3">
@@ -85,6 +85,6 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-success mt-2">Salvar</button>
+        <button type="submit" href="/administrador/events/administrador.events.store" class="btn btn-success mt-2">Salvar</button>
     </form>
 @endsection

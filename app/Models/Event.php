@@ -11,20 +11,13 @@ class Event extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'id',
-        'nome',
-        'nome_palestrante',
-        'descricao',
-        'endereco',
-        'bairro',
-        'local',
-        'imagem',
-        'vagas_disponiveis',
-        'duracao',
-        'status',
-        'metodo',
-        'data',
-        'hora'
+       'name',
+       'speaker_name',
+       'start_date',
+       'end_date',
+       'target_audience',
+       'participants_limit'
+
         // $table->foreign('certificado_id')->references('id')->on('certificates');
     ];
 }

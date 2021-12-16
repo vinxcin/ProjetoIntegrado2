@@ -14,10 +14,10 @@
                         <div class="form-group">
                             <input
                                 type="text"
-                                class="form-control {{ $errors->has('user.nome') ? 'is-invalid' : '' }}"
+                                class="form-control {{ $errors->has('user.name') ? 'is-invalid' : '' }}"
                                 placeholder="Nome"
-                                name="user[nome]"
-                                value="{{ old('user.nome') }}"
+                                name="user[name]"
+                                value="{{ old('user.name') }}"
                             >
                             <div class="invalid-feedback">{{ $errors->first('user.name') }}</div>
                         </div>
@@ -248,16 +248,16 @@
                             </div>
                         </div>
 
-                    </div>
-
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <select class="form-select" name="user[tipo]" aria-label="Default select example" >
-                                <option selected>Tipo</option>
-                                <option value="administrador">Administrador</option>
-                                <option value="participant">Participante</option>
-                            </select>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <select class="form-select" name="user[tipo]" aria-label="Default select example" >
+                                    <option selected>Tipo</option>
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Participante">Participante</option>
+                                </select>
+                            </div>
                         </div>
+
                     </div>
 
                     <div class="form-group">
@@ -272,5 +272,3 @@
     </div>
 </div>
 @endsection
-
-
