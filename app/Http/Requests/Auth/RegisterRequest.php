@@ -46,7 +46,6 @@ class RegisterRequest extends FormRequest
             'address.numero'      => 'número',
             'address.bairro'      => 'bairro',
             'address.complemento' => 'complemento',
-
             'user.matricula'      => 'matrícula',
         ];
     }

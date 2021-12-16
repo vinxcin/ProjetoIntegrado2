@@ -1,5 +1,4 @@
-@extends('layouts.panel')
-@section('title', 'Eventos')
+@extends('layouts.admin')
 @section('content')
     <form>
         <div class="d-flex justify-content-between">
@@ -7,7 +6,7 @@
                 <input type="text" name="search" class="form-control w-50 mr-2" value="" placeholder="Pesquisar...">
                 <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
             </div>
-            <a href="{{ route('administrador.events.create') }}" class="btn btn-primary">Novo evento</a>
+            <a href="{{ route('administrador.create') }}" class="btn btn-primary">Novo evento</a>
         </div>
     </form>
     <table class="table mt-4">

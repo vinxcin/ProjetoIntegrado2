@@ -19,7 +19,8 @@ Route::group(['as' => 'auth.'], function() {
         Route::post('register', [RegisterController::class, 'store'])->name('register.store');
     });
 });
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route::get('register', [RegisterController::class, 'create'])->name('auth.register.create');
 // Route::post('register', [RegisterController::class, 'store'])->name('auth.register.store');
@@ -65,11 +66,10 @@ Route::get('administrador/dados', [App\Http\Controllers\Administrador\DadoContro
 
     //Sessão de eventos
 
-    Route::get('administrador/events', [App\Http\Controllers\Administrador\Event\EventsController::class, 'index'])
-    ->name('administrador.events.index')
+    Route::get('administrador/events', [App\Http\Controllers\Administrador\EventController::class, 'index'])
+    ->name('administrador.events')
     ->middleware('auth');
 
-    Route::get('administrador/events/create', [App\Http\Controllers\Administrador\Event\EventsController::class, 'create'])
-    ->name('administrador.events.create')
-    ->middleware('auth');
-
+    Route::get('administrador/events/create', [App\Http\Controllers\Administrador\EventController::class, 'create'])
+         ->name('administrador.create')
+         ->middleware('auth');

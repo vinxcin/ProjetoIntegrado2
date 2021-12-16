@@ -1,5 +1,5 @@
-@extends('layouts.panel')
-@section('title', 'Novo evento')
+@extends('layouts.admin')
+
 @section('content')
     <form action="" method="POST" autocomplete="off">
         @csrf
