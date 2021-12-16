@@ -20,8 +20,8 @@ Route::group(['as' => 'auth.'], function() {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/register', [RegisterController::class, 'create'])->name('auth.register.create');
-Route::post('register', [RegisterController::class, 'store'])->name('auth.register.store');
+// Route::get('/register', [RegisterController::class, 'create'])->name('auth.register.create');
+// Route::post('register', [RegisterController::class, 'store'])->name('auth.register.store');
 
 //-----------------------------------------------------------------------------------------
 
@@ -66,7 +66,6 @@ Route::group(['as' => 'auth.'], function() {
 
             Route::get('administrador/events/create', [App\Http\Controllers\Administrador\EventController::class, 'create'])
             ->name('administrador.create');
-
-            Route::post('administrador.events', [App\Http\Controllers\Administrador\EventController::class, 'store'])->name('auth.events.store');
+            Route::post('administrador/events/create', [App\Http\Controllers\Administrador\EventController::class, 'store'])->name('administrador.events.store');
     });
 });

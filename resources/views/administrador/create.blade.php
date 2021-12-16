@@ -19,12 +19,12 @@
             </div>
             <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="nome_palestrante">Nome do palestrante</label>
+                    <label for="speaker_name">Nome do palestrante</label>
                     <input
                         type="text"
-                        class="form-control {{ $errors->has('nome_palestrante') ? 'is-invalid' : '' }}"
-                        id="nome_palestrante"
-                        name="nome_palestrante"
+                        class="form-control {{ $errors->has('speaker_name') ? 'is-invalid' : '' }}"
+                        id="speaker_name"
+                        name="speaker_name"
                         value="{{ old('nome_palestrante') }}"
                     >
                     <div class="invalid-feedback">{{ $errors->first('speaker_name') }}</div>
@@ -85,6 +85,6 @@
                 </div>
             </div>
         </div>
-        <button type="submit" href="/administrador/events/administrador.events.store" class="btn btn-success mt-2">Salvar</button>
+        <button type="submit" class="btn btn-success mt-2">Salvar</button>
     </form>
 @endsection
