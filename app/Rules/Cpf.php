@@ -10,8 +10,6 @@ class Cpf implements Rule
 
     public function passes($attribute, $value)
     {
-
-
         // Extrai somente os números
         $cpf = preg_replace('/[^0-9]/is', '', $value);
 
@@ -41,6 +39,6 @@ class Cpf implements Rule
 
     public function message()
     {
-       
+
     }
 }
